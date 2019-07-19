@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<VAST version="2.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://specs.adfox.ru/uploads/vast.xsd">
+    <Ad id="1.1">
+        <InLine>
+            <AdSystem>Videonow</AdSystem>
+            <AdTitle/>
+            <ViewableImpression>
+                <Viewable>{{API-SERVER}}/event/ViewableImpression.viewable.1</Viewable>
+                <Viewable>{{API-SERVER}}/event/ViewableImpression.viewable.2</Viewable>
+            </ViewableImpression>
+            <Error><![CDATA[{{API-SERVER}}/error/[ERRORCODE]?message=[MESSAGE]]]></Error>
+            <Impression><![CDATA[{{API-SERVER}}/event/impression]]></Impression>
+            <SafeInfo><![CDATA[{{API-SERVER}}/event/safeInfo?location=[LOCATION]&visibility=[VISIBILITY]&size=[SIZE]&sq=[SQUARE]]]></SafeInfo>
+            <Creatives>
+                <Creative>
+                    <Linear>
+                        <Duration>00:00:17</Duration>
+                        <TrackingEvents>
+                            <Tracking event="creativeView"><![CDATA[{{API-SERVER}}/event/creativeView]]></Tracking>
+                            <Tracking event="start"><![CDATA[{{API-SERVER}}/event/start]]></Tracking>
+                            <Tracking event="midpoint"><![CDATA[{{API-SERVER}}/event/midpoint]]></Tracking>
+                            <Tracking event="firstQuartile"><![CDATA[{{API-SERVER}}/event/firstQuartile]]></Tracking>
+                            <Tracking event="thirdQuartile"><![CDATA[{{API-SERVER}}/event/thirdQuartile]]></Tracking>
+                            <Tracking event="complete"><![CDATA[{{API-SERVER}}/event/complete]]></Tracking>
+                            <Tracking event="mute"><![CDATA[{{API-SERVER}}/event/mute]]></Tracking>
+                            <Tracking event="unmute"><![CDATA[{{API-SERVER}}/event/unmute]]></Tracking>
+                            <Tracking event="pause"><![CDATA[{{API-SERVER}}/event/pause]]></Tracking>
+                            <Tracking event="resume"><![CDATA[{{API-SERVER}}/event/resume]]></Tracking>
+                            <Tracking event="fullscreen"><![CDATA[{{API-SERVER}}/event/fullscreen]]></Tracking>
+                            <Tracking event="expand"><![CDATA[{{API-SERVER}}/event/expand]]></Tracking>
+                            <Tracking event="collapse"><![CDATA[{{API-SERVER}}/event/collapse]]></Tracking>
+                            <Tracking event="close"><![CDATA[{{API-SERVER}}/event/close]]></Tracking>
+                        </TrackingEvents>
+
+                        <VideoClicks>
+                            <ClickThrough><![CDATA[{{API-SERVER}}/event/videoClick]]></ClickThrough>
+                        </VideoClicks>
+                        <MediaFiles>
+                            <MediaFile id="1" delivery="progressive" type="video/mp4" bitrate="512" maintainAspectRatio="true" scalable="true" width="640" height="360">
+                                <![CDATA[ {{API-SERVER}}/video/lays.mp4 ]]>
+                            </MediaFile>
+                            <!--<MediaFile id="1" delivery="progressive" type="video/mp4" bitrate="512" maintainAspectRatio="true" scalable="true" width="404" height="720">-->
+                            <!--<![CDATA[ {{API-SERVER}}/video/VP_Coffee_404x720_w404_h720_d17000.mp4]]>-->
+                            <!--</MediaFile>-->
+                            <!--<MediaFile id="2" delivery="progressive" type="video/mpeg" bitrate="512" width="404" height="720" maintainAspectRatio="true" scalable="true">-->
+                            <!--<![CDATA[ {{API-SERVER}}/video/coffee.mpg]]>-->
+                            <!--</MediaFile>-->
+                            <!--<MediaFile id="3" delivery="progressive" bitrate="96" type="audio/mp3">-->
+                            <!--<![CDATA[{{API-SERVER}}/video/VP_Coffee_404x720.mp3]]>-->
+                            <!--</MediaFile>-->
+                        </MediaFiles>
+                    </Linear>
+                </Creative>
+            </Creatives>
+            <Extensions>
+                <Extension type="vnCreative">
+                    <select>{{API-SERVER}}/event/creativeSelect/?id=1.1</select>
+                    <debug>{{API-SERVER}}/event/creativeDebug/?id=1.1</debug>
+                    <impression>{{API-SERVER}}/event/creativeImpression/?id=1.1</impression>
+                    <passed>{{API-SERVER}}/event/creativePassed/?id=1.1</passed>
+                </Extension>
+            </Extensions>
+        </InLine>
+    </Ad>
+</VAST>

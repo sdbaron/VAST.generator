@@ -1,0 +1,17 @@
+Extension(type="vnFormat" name="contentRoll")
+    options
+        if format.waitScroll
+            option(name='waitScroll') #{format.waitScroll}
+        if format.playerElement
+            option(name='playerElement') #{format.playerElement}
+        if format.playerAfter
+            option(name='playerAfter') #{format.playerAfter}
+        if format.playerBefore
+            option(name='playerBefore') #{format.playerBefore}
+<option name="widthElement">.vn-player</option>
+<option name="playerDefaultClass">vn-player</option>
+<option name="playerPlaybackClass">vn-playback</option>
+<!--            <option name="preloadDistance">190</option>-->
+<option name="floatingWidth">30%</option>
+<option name="floatingBottom">10%</option>
+<option name="floatingRight">10%</option>

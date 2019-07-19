@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VAST version="3.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="vast.xsd">
+    <Ad id="1">
+        <Wrapper>
+            <AdSystem>Videonow.ru</AdSystem>
+            <AdTitle>Videonow.ru title</AdTitle>
+            <Error><![CDATA[{{API-SERVER}}/error/[ERRORCODE]?message=[MESSAGE]]]></Error>
+            <Impression><![CDATA[{{API-SERVER}}/event/impression/1]]></Impression>
+            <SafeInfo><![CDATA[{{API-SERVER}}/event/safeInfo?location=[LOCATION]&visibility=[VISIBILITY]&size=[SIZE]&sq=[SQUARE]]]></SafeInfo>
+            <ViewableImpression skipoffset="00:05">
+                <global>true</global>
+                <Viewable><![CDATA[{{API-SERVER}}/event/ViewableImpression.viewable/g-1.0]]></Viewable>
+                <Viewable><![CDATA[{{API-SERVER}}/event/ViewableImpression.viewable/g-1.1]]></Viewable>
+            </ViewableImpression>
+            <VASTAdTagURI><![CDATA[{{API-SERVER}}/vast/Creative.xml?location=[LOCATION]&visibility=[VISIBILITY]&size=[SIZE]&sq=[SQUARE]]]></VASTAdTagURI>
+            <Extensions>
+                <Extensions>
+                    <Extension type="skipTime">00:05</Extension>
+                    <undefined></undefined>
+                    <Extension type="vnControls">
+                        <control id="close" enableWithVPAID="true"/>
+                        <control id="countdown" enableWithVPAID="true"/>
+                        <control id="soundbtn" enableWithVPAID="true"/>
+                        <control id="progress" enableWithVPAID="true"/>
+                        <control id="logo" enableWithVPAID="true"/>
+                        <control id="adlabel" enableWithVPAID="true"/>
+                        <control id="advLogo" enableWithVPAID="true"/>
+                        <control id="progressbar" enableWithVPAID="true"/>
+                        <control id="callbutton" enableWithVPAID="true"/>
+                        <control id="moreinfo" enableWithVPAID="true"/>
+                        <control id="bottomborder" enableWithVPAID="true"/>
+                        <control id="background" enableWithVPAID="true"/>
+                    </Extension>
+                    <Extension type="vnCreative">
+                        <select>{{API-SERVER}}/event/creativeSelect/1</select>
+                        <debug>{{API-SERVER}}/event/creativeDebug/1</debug>
+                        <impression>{{API-SERVER}}/event/creativeImpression/1</impression>
+                        <passed>{{API-SERVER}}/event/creativePassed/1</passed>
+                    </Extension>
+                    <Extension type="vnVisibleInventory">
+                        <url><![CDATA[{{API-SERVER}}/event/visibleInventory/1.0]]></url>
+                        <url><![CDATA[{{API-SERVER}}/event/visibleInventory/1.1]]></url>
+                    </Extension>
+                </Extensions>
+                <Extension type="vnDefaultAd">
+                    <Ad id="2">
+                        <InLine>
+                            <AdSystem>Videonow.ru 2</AdSystem>
+                            <AdTitle>Videonow.ru title 2</AdTitle>
+                            <Error><![CDATA[{{API-SERVER}}/error/[ERRORCODE]?message=[MESSAGE]]]></Error>
+                            <Impression><![CDATA[{{API-SERVER}}/event/impression/2]]></Impression>
+                            <SafeInfo><![CDATA[{{API-SERVER}}/event/safeInfo?location=[LOCATION]&visibility=[VISIBILITY]&size=[SIZE]&sq=[SQUARE]]]></SafeInfo>
+                            <Creatives>
+                                <Creative>
+                                    <Linear>
+                                        <Duration>00:17</Duration>
+                                        <TrackingEvents>
+                                            <Tracking event="creativeView">{{API-SERVER}}/event/creativeView/2</Tracking>
+                                            <Tracking event="start">{{API-SERVER}}/event/start/2</Tracking>
+                                            <Tracking event="midpoint">{{API-SERVER}}/event/midpoint/2</Tracking>
+                                            <Tracking event="firstQuartile">{{API-SERVER}}/event/firstQuartile/2</Tracking>
+                                            <Tracking event="thirdQuartile">{{API-SERVER}}/event/thirdQuartile/2</Tracking>
+                                            <Tracking event="complete">{{API-SERVER}}/event/complete/2</Tracking>
+                                            <Tracking event="close">{{API-SERVER}}/event/close/2</Tracking>
+                                            <Tracking event="mute">{{API-SERVER}}/event/mute/2</Tracking>
+                                            <Tracking event="unmute">{{API-SERVER}}/event/unmute/2</Tracking>
+                                            <Tracking event="pause">{{API-SERVER}}/event/pause/2</Tracking>
+                                            <Tracking event="resume">{{API-SERVER}}/event/resume/2</Tracking>
+                                            <Tracking event="fullscreen">{{API-SERVER}}/event/fullscreen/2</Tracking>
+                                            <Tracking event="expand">{{API-SERVER}}/event/expand/2</Tracking>
+                                            <Tracking event="collapse">{{API-SERVER}}/event/collapse/2</Tracking>
+                                        </TrackingEvents>
+                                        <VideoClicks>
+                                            <ClickThrough>{{API-SERVER}}/event/videoClick/2</ClickThrough>
+                                            <ClickTracking>{{API-SERVER}}/event/clickTracking/2</ClickTracking>
+                                            <ClickTracking>{{API-SERVER}}/event/clickTracking/2.1</ClickTracking>
+                                        </VideoClicks>
+                                    </Linear>
+                                </Creative>
+                            </Creatives>
+                            <Extensions>
+                                <Extensions>
+                                    <Extension type="skipTime">00:05</Extension>
+                                    <undefined></undefined>
+                                    <Extension type="vnCreative">
+                                        <select>{{API-SERVER}}/event/creativeSelect/2</select>
+                                        <debug>{{API-SERVER}}/event/creativeDebug/2</debug>
+                                        <impression>{{API-SERVER}}/event/creativeImpression/2</impression>
+                                        <passed>{{API-SERVER}}/event/creativePassed/2</passed>
+                                    </Extension>
+                                </Extensions>
+                            </Extensions>
+                        </InLine>
+                    </Ad>
+                </Extension>
+            </Extensions>
+        </Wrapper>
+    </Ad>
+</VAST>

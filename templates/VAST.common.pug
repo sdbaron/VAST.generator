@@ -1,0 +1,13 @@
+include mixins
+
+AdSystem #{AdSystem}
+AdTitle #{AdTitle}
+Error <![CDATA[{{API-SERVER}}/error/[ERRORCODE]?message=[MESSAGE]]]>
+Impression <![CDATA[{{API-SERVER}}/event/impression/#{id}]]>
+SafeInfo <![CDATA[{{API-SERVER}}/event/safeInfo?location=[LOCATION]&visibility=[VISIBILITY]&size=[SIZE]&sq=[SQUARE]]]>
+
++tagCollection(viewableImpression)
+//- if viewableImpression && viewableImpression.mainTag
+    +tag(viewableImpression.mainTag)
+        if viewableImpression && viewableImpression.childTags
+            +tagsListCollection(viewableImpression.childTags)

@@ -1,0 +1,24 @@
+Ad(id=id)
+    InLine
+        include VAST.common.pug
+        Creatives
+            Creative
+                Linear
+                    if duration
+                        Duration #{duration}
+                    TrackingEvents
+                        each val in ['creativeView', 'start', 'midpoint', 'firstQuartile', 'thirdQuartile', 'complete', 'close', 'mute', 'unmute', 'pause', 'resume', 'fullscreen', 'expand', 'collapse']
+                            Tracking(event= val) {{API-SERVER}}/event/#{val}/#{id}
+
+                    VideoClicks
+                        ClickThrough {{API-SERVER}}/event/videoClick/#{id}
+                        ClickTracking {{API-SERVER}}/event/clickTracking/#{id}
+                        ClickTracking {{API-SERVER}}/event/clickTracking/#{id}.1
+
+                    //- MediaFiles
+                        //- <MediaFile id="1" delivery="progressive" type="video/mp4" bitrate="512" maintainAspectRatio="true" scalable="true" width="640" height="360">
+                        //-    <![CDATA[ {{API-SERVER}}/video/lays.mp4 ]]>
+                        //- </MediaFile>
+        Extensions
+            include VAST.extentions.pug
+            != vnDefaultAd

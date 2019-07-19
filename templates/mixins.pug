@@ -1,0 +1,36 @@
+mixin tag(tag)
+    if tag
+        #{tag.name}&attributes(tag.attr)
+            if block
+                block
+
+mixin tagsList(data)
+    if data
+        if data.urls
+            each trackUrl in data.urls
+                #{data.name} #{trackUrl}
+        else
+            - var i = 0
+            while i++ < (data.count || 1)
+                if data.content
+                    - info = `${data.prefix||''}${id}.${i - 1}`
+                    - contentReady = ('' + data.content).replace('[[DATA]]', info)
+                    #{data.name}()&attributes(data.attr)
+                        != contentReady
+                else
+                    #{data.name}()&attributes(data.attr)/
+        if block
+            block
+
+mixin tagsListCollection(tags)
+    if tags
+        each tag in tags
+            +tagsList(tag)
+        if block
+            block
+
+mixin tagCollection(data)
+    if data
+        +tag(data.mainTag)
+            if data.childTags
+                +tagsListCollection(data.childTags)

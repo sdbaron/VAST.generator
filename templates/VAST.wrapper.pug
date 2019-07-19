@@ -1,0 +1,7 @@
+Ad(id=id)
+    Wrapper
+        include VAST.common.pug
+        VASTAdTagURI <![CDATA[{{API-SERVER}}/vast/#{VASTAdTagURI}?location=[LOCATION]&visibility=[VISIBILITY]&size=[SIZE]&sq=[SQUARE]]]>
+        Extensions
+            include VAST.extentions.pug
+            != vnDefaultAd

@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VAST version="3.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="vast.xsd">
+    <Ad id="1">
+        <Wrapper>
+            <AdSystem>Videonow.ru</AdSystem>
+            <AdTitle>Videonow flyRoll</AdTitle>
+            <Error><![CDATA[{{API-SERVER}}/error/[ERRORCODE]?message=[MESSAGE]]]></Error>
+            <VASTAdTagURI>
+                <!--<![CDATA[{{API-SERVER}}/vast/VASTsis.xml?location=[LOCATION]&visibility=[VISIBILITY]&size=[SIZE]&sq=[SQUARE]]]></VASTAdTagURI>-->
+                <!--<![CDATA[{{API-SERVER}}/vast/VASTCreativeFlyRoll.xml?location=[LOCATION]&visibility=[VISIBILITY]&size=[SIZE]&sq=[SQUARE]]]></VASTAdTagURI>-->
+                <![CDATA[{{API-SERVER}}/vast/VASTCreative.xml?location=[LOCATION]&visibility=[VISIBILITY]&size=[SIZE]&sq=[SQUARE]]]></VASTAdTagURI>
+            <Impression>
+                <![CDATA[{{API-SERVER}}/event/impression]]>
+            </Impression>
+            <Extension type="vnVisibleInventory">
+                <global>true</global>
+                <url><![CDATA[{{API-SERVER}}/event/visibleInventory/gw-1-0]]></url>
+            </Extension>
+
+            <Extensions>
+                <Extension type="skipTime">00:05</Extension>
+                <Extension type="vnFormat" name="flyRoll">
+                    <!--<Extension type="vnFormat" name="contentRoll">-->
+                    <options>
+                        <option name="waitScroll">false</option>
+                        <option name="playerElement">#vn-player</option>
+                        <option name="playerDefaultClass">vn-player</option>
+                        <option name="playerPlaybackClass">vn-playback</option>
+                        <option name="preloadDistance">190</option>
+                        <option name="floatingWidth">30%</option>
+                        <option name="floatingBottom">10%</option>
+                        <option name="floatingRight">10%</option>
+                    </options>
+                </Extension>
+                <Extension type="vnControls">
+                    <control id="close" enableWithVPAID="true"/>
+                    <control id="countdown" enableWithVPAID="true"/>
+                    <control id="soundbtn" enableWithVPAID="true"/>
+                    <control id="progress" enableWithVPAID="true"/>
+                    <control id="adlabel" enableWithVPAID="true"/>
+                    <!--<control id="logo" layout="0" display="none"/>-->
+                    <!--<control id="advLogo" layout="" url="https://visa.ru" imgsrc="http://poligon.videonow.ru/demostands/contentroll-branding/logo.png" width="125px" height="40px"/>-->
+                    <!--<control id="advLogo" display="none" layout="0" />-->
+                </Extension>
+                <Extension type="vnCreative">
+                    <select>{{API-SERVER}}/event/creativeSelect/?id=1</select>
+                    <debug>{{API-SERVER}}/event/creativeDebug/?id=1</debug>
+                    <impression>{{API-SERVER}}/event/creativeImpression/?id=1</impression>
+                    <passed>{{API-SERVER}}/event/creativePassed/?id=1</passed>
+                </Extension>
+                <Extension type="vnDefaultAd">
+                    <Ad id="1">
+                        <Wrapper>
+                            <AdSystem>Videonow.ru</AdSystem>
+                            <AdTitle>Videonow content Roll</AdTitle>
+                            <Error><![CDATA[{{API-SERVER}}/error/[ERRORCODE]?message=[MESSAGE]]]></Error>
+                            <VASTAdTagURI>
+                                <![CDATA[{{API-SERVER}}/vast/VASTCreative.xml?location=[LOCATION]&visibility=[VISIBILITY]&size=[SIZE]&sq=[SQUARE]]]></VASTAdTagURI>
+                            <Impression>
+                                <![CDATA[{{API-SERVER}}/event/impression]]>
+                            </Impression>
+                            <Extensions>
+                                <Extension type="skipTime">00:05</Extension>
+                                <Extension type="vnFormat" name="contentRoll">
+                                    <options>
+                                        <option name="waitScroll">false</option>
+                                        <option name="playerElement">#vn-player</option>
+                                        <option name="playerDefaultClass">vn-player</option>
+                                        <option name="playerPlaybackClass">vn-playback</option>
+                                        <option name="preloadDistance">190</option>
+                                    </options>
+                                </Extension>
+                                <Extension type="vnControls">
+                                    <control id="close" enableWithVPAID="true"/>
+                                    <control id="countdown" enableWithVPAID="true"/>
+                                    <control id="soundbtn" enableWithVPAID="true"/>
+                                    <control id="progress" enableWithVPAID="true"/>
+                                    <control id="adlabel" enableWithVPAID="true"/>
+                                    <control id="logo" layout="0" display="none"/>
+                                </Extension>
+                                <Extension type="vnCreative">
+                                    <select>{{API-SERVER}}/event/creativeSelect/?id=1</select>
+                                    <debug>{{API-SERVER}}/event/creativeDebug/?id=1</debug>
+                                    <impression>{{API-SERVER}}/event/creativeImpression/?id=1</impression>
+                                    <passed>{{API-SERVER}}/event/creativePassed/?id=1</passed>
+                                </Extension>
+                            </Extensions>
+                        </Wrapper>
+                    </Ad>
+                </Extension>
+            </Extensions>
+        </Wrapper>
+    </Ad>
+</VAST>

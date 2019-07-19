@@ -1,0 +1,32 @@
+<Wrapper>
+    <AdSystem>#{AdSystem}</AdSystem>
+    <AdTitle>#{AdTitle}</AdTitle>
+    <Error><![CDATA[{{API-SERVER}}/error/[ERRORCODE]?message=[MESSAGE]]]></Error>
+    <VASTAdTagURI>
+        <![CDATA[{{API-SERVER}}/vast/#{VASTAdTagURI}?location=[LOCATION]&visibility=[VISIBILITY]&size=[SIZE]&sq=[SQUARE]]]></VASTAdTagURI>
+    <Impression>
+        <![CDATA[{{API-SERVER}}/event/impression/#{id}]]>
+    </Impression>
+    <Extensions>
+        <Extension type="skipTime">#{skipTime}</Extension>
+        #{vnFormat}
+        <Extension type="vnControls">
+            <control id="close" enableWithVPAID="true"/>
+            <control id="countdown" enableWithVPAID="true"/>
+            <control id="soundbtn" enableWithVPAID="true"/>
+            <control id="progress" enableWithVPAID="true"/>
+            <control id="adlabel" enableWithVPAID="true"/>
+        </Extension>
+        <Extension type="vnCreative">
+            <select>{{API-SERVER}}/event/creativeSelect/?id=#{id}</select>
+            <debug>{{API-SERVER}}/event/creativeDebug/?id=#{id}</debug>
+            <impression>{{API-SERVER}}/event/creativeImpression/?id=#{id}</impression>
+            <passed>{{API-SERVER}}/event/creativePassed/?id=#{id}</passed>
+        </Extension>
+        <Extension type="vnVisibleInventory">
+            <global>true</global>
+            <url><![CDATA[{{API-SERVER}}/event/visibleInventory/gw-#{id}-0]]></url>
+        </Extension>
+        #{vnDefaultAd}
+    </Extensions>
+</Wrapper>

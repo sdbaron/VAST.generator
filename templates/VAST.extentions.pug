@@ -1,0 +1,18 @@
+include mixins
+
+Extensions
+    if skipTime
+        Extension(type="skipTime") #{skipTime}
+
+    #{vnFormat}
+
+    if vnControls
+        Extension(type="vnControls")
+            each ctrl in vnControls
+                control&attributes(ctrl)/
+
+    Extension(type="vnCreative")
+        each val in ['Select', 'Debug', 'Impression', 'Passed']
+            #{val.toLowerCase()} {{API-SERVER}}/event/creative#{val}/#{id}
+
+    +tagCollection(vnVisibleInventory)
